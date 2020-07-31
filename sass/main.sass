@@ -1,0 +1,80 @@
+$paddingContainer: 20px 140px
+$lightBlue: #76818d
+$darkBlue: #2c3e50
+$white: white
+body
+    font-size: 16px
+    line-height: 18px
+    font-weight: normal
+.container
+    margin: 0 auto
+    max-width: 1440px
+    width: 100%
+    padding: $paddingContainer
+h1
+    color: $darkBlue
+    font-size: 3.5em
+    line-height: 60px
+    font-weight: 600
+.btn
+    padding: 15px
+    color: $lightBlue
+    border: 1px solid $lightBlue
+    border-radius: 10px
+    text-align: center
+    &_header
+        flex-basis: 40%
+
+.header
+    display: flex
+    flex-flow: column
+    &-wrapper
+        display: flex
+        flex-flow: column
+        height: 100vh
+        //background: url(../img/headerBackground.jpg) center no-repeat
+        background-size: cover
+    &-top           
+        display: flex
+        flex-flow: column
+        justify-content: space-between
+        align-items: center
+        float: left
+        margin: auto 0
+        height: 220px
+        &_wrapper
+            display: flex
+            height: 100vh
+        &__description
+            color: $lightBlue
+            font-size: 2em
+            line-height: 35px
+            font-weight: 500
+        &__btns
+            display: flex
+            justify-content: space-between
+            width: 50%
+    &-bottom
+        display: flex
+        justify-content: space-between
+        align-items: center
+        color: $white
+        &_wrapper
+            background-color: $darkBlue
+        &__logo
+            font-size: 1.2em
+            line-height: 20px
+            font-weight: 600
+        .menu
+            font-size: 1em
+            line-height: 20px
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-basis: 60%
+            flex-grow: 1
+            text-transform: uppercase    
+            &__link
+                color: $white
+
+
