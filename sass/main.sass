@@ -23,10 +23,11 @@ h1
 h2
     text-align: center
     color: $darkBlue
-    font-size: 2.5em
-    line-height: 40px
+    font-size: 2em
+    line-height: 35px
     font-weight: 500
     margin-bottom: 0.5em
+    text-transform: uppercase
 h2:after
     content: ""
     height: 3px
@@ -43,6 +44,9 @@ h2:after
     border-radius: 10px
     text-align: center
     min-width: 120px
+    &:hover
+        color: $white
+        background-color: $darkBlue
     &_header
         flex-basis: 40%
 
@@ -95,6 +99,9 @@ h2:after
         padding-top: 20px
         padding-bottom: 20px
         &_wrapper
+            z-index: 2
+            position: fixed
+            width: 100%
             background-color: $darkBlue
         &__logo
             display: flex
@@ -131,10 +138,12 @@ h2:after
     justify-content: space-between
     margin: auto
     width: 100%
-    max-width: 1000px
+    background-color: white
     & *:not(:last-child)        
         margin-bottom: 2em
     &-wrapper
+        background-color: white
+        position: relative
         display: flex
         width: 100%
     &-img
@@ -147,9 +156,105 @@ h2:after
     &-description
         text-align: justify
 
+.services
+    padding-left: 0
+    padding-right: 0
+    position: relative
+    display: flex
+    &-content
+        z-index: 1
+        display: flex
+        flex-flow: column
+        justify-content: space-between
+        align-items: center
+    &::before
+        position: absolute
+        top: 0
+        left: 0
+        content: ""
+        width: 100%
+        height: 100%
+        background: #f7f7f7dc
+    &-wrapper
+        width: 100%
+        height: 100%
+        background: url(../img/servicesBackground.jpg) center no-repeat
+        background-size: cover
+        background-attachment: fixed
+    &-title
+        margin-bottom: 2em
+    &-cards
+        display: flex
+        justify-content: space-between
+        width: 75%
+        min-width: 1080px
+        flex-wrap: wrap
+    .cards
+        &-item
+            display: flex
+            flex-flow: column
+            align-items: center
+            justify-content: space-between
+            min-height: 250px
+            flex-basis: 20%
+        &__img
+            width: 20%
+            height: auto
+        &__title
+            color: $headers
+            font-size: 1.1em
+            line-height: 20px
+            text-align: center
+        &__description
+            text-align: center
+
+.portfolio
+    display: flex
+    flex-flow: column
+    justify-content: space-between
+    align-items: center
+    &>:not(:last-child)
+        margin-bottom: 1.5em
+        
+    &-filter
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        max-width: 500px
+        min-width: 300px
+    &-gallary
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        align-items: center
+        transition: all ease 0.3s
+        &__img
+            width: 250px
+            height: 250px
+            background-color: red
+            transition: all ease 0.4s
+            margin-bottom: 1em
+            margin-right: 1em
+            background: url(../img/servicesBackground.jpg) center no-repeat
+            background-size: cover
+        &__img:hover
+            cursor: pointer
+            transform: scale(1.2)
+            transition: all ease .5s
 
 
-
+@media screen and (max-width: 1110px)
+    .services
+        .cards
+            padding-left: 1em
+            padding-right: 1em
+            min-width: auto
+            width: 100%
+            justify-content: space-between
+            &-item
+                min-width: 250px
+                flex-basis: 45%
 @media screen and (max-width: 1040px)
     body
         font-size: 14px
@@ -180,7 +285,7 @@ h2:after
             height: 1px
             background-color: $lightBlue
             position: absolute
-            top: 70px
+            top: 65px
             left: 0
         &__dropdown
             display: flex
@@ -190,5 +295,18 @@ h2:after
         &-top
             &_wrapper
                 height: 350px
+            &_wrapper::before
+                background: linear-gradient(90deg, rgba(150,150,150,0.7) 100%, rgba(157,157,157,0.7) 76%, rgba(2,0,36,0.7) 100%)
     .container
         padding: $paddingContainerTablet
+@media screen and (max-width: 425px)
+    .services
+        .cards
+            padding: 0
+            justify-content: center
+            &-item
+                flex-basis: 100%
+    .portfolio-gallary__img
+        margin-right: 0
+    .portfolio-description
+        text-align: justify

@@ -22,10 +22,11 @@ h1 {
 h2 {
   text-align: center;
   color: #2c3e50;
-  font-size: 2.5em;
-  line-height: 40px;
+  font-size: 2em;
+  line-height: 35px;
   font-weight: 500;
   margin-bottom: 0.5em;
+  text-transform: uppercase;
 }
 
 h2:after {
@@ -46,6 +47,11 @@ h2:after {
   border-radius: 10px;
   text-align: center;
   min-width: 120px;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #2c3e50;
 }
 
 .btn_header {
@@ -144,6 +150,9 @@ h2:after {
 }
 
 .header-bottom_wrapper {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
   background-color: #2c3e50;
 }
 
@@ -216,7 +225,7 @@ h2:after {
           justify-content: space-between;
   margin: auto;
   width: 100%;
-  max-width: 1000px;
+  background-color: white;
 }
 
 .about *:not(:last-child) {
@@ -224,6 +233,8 @@ h2:after {
 }
 
 .about-wrapper {
+  background-color: white;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,6 +252,190 @@ h2:after {
 
 .about-description {
   text-align: justify;
+}
+
+.services {
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.services-content {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.services::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7dc;
+}
+
+.services-wrapper {
+  width: 100%;
+  height: 100%;
+  background: url(../img/servicesBackground.jpg) center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.services-title {
+  margin-bottom: 2em;
+}
+
+.services-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 75%;
+  min-width: 1080px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.services .cards-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 250px;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+.services .cards__img {
+  width: 20%;
+  height: auto;
+}
+
+.services .cards__title {
+  color: #E87E04;
+  font-size: 1.1em;
+  line-height: 20px;
+  text-align: center;
+}
+
+.services .cards__description {
+  text-align: center;
+}
+
+.portfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portfolio > :not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.portfolio-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.portfolio-gallary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.portfolio-gallary__img {
+  width: 250px;
+  height: 250px;
+  background-color: red;
+  -webkit-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  background: url(../img/servicesBackground.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.portfolio-gallary__img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+@media screen and (max-width: 1110px) {
+  .services .cards {
+    padding-left: 1em;
+    padding-right: 1em;
+    min-width: auto;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .services .cards-item {
+    min-width: 250px;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+  }
 }
 
 @media screen and (max-width: 1040px) {
@@ -286,7 +481,7 @@ h2:after {
     height: 1px;
     background-color: #76818d;
     position: absolute;
-    top: 70px;
+    top: 65px;
     left: 0;
   }
   .header-bottom__dropdown {
@@ -300,8 +495,31 @@ h2:after {
   .header-top_wrapper {
     height: 350px;
   }
+  .header-top_wrapper::before {
+    background: -webkit-gradient(linear, left top, right top, color-stop(100%, rgba(150, 150, 150, 0.7)), color-stop(76%, rgba(157, 157, 157, 0.7)), to(rgba(2, 0, 36, 0.7)));
+    background: linear-gradient(90deg, rgba(150, 150, 150, 0.7) 100%, rgba(157, 157, 157, 0.7) 76%, rgba(2, 0, 36, 0.7) 100%);
+  }
   .container {
     padding: 20px 5%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .services .cards {
+    padding: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .services .cards-item {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .portfolio-gallary__img {
+    margin-right: 0;
+  }
+  .portfolio-description {
+    text-align: justify;
   }
 }
 /*# sourceMappingURL=main.css.map */
