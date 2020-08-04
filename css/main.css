@@ -40,6 +40,10 @@ h2:after {
           transform: translateY(0.5em);
 }
 
+h4 {
+  color: #2c3e50;
+}
+
 .btn {
   padding: 15px;
   color: #000000;
@@ -188,6 +192,11 @@ h2:after {
 
 .header-bottom .menu__link {
   color: white;
+}
+
+.header-bottom .menu__link:hover {
+  cursor: pointer;
+  color: #E87E04;
 }
 
 .header-bottom__dropdown {
@@ -374,6 +383,10 @@ section[name="services"]::before {
   margin-bottom: 2em;
 }
 
+.portfolio-description {
+  text-align: center;
+}
+
 .portfolio-filter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -389,6 +402,11 @@ section[name="services"]::before {
   min-width: 300px;
 }
 
+.portfolio-filter li:nth-child(odd):hover {
+  cursor: pointer;
+  color: #E87E04;
+}
+
 .portfolio-gallary {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -401,23 +419,34 @@ section[name="services"]::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all ease 0.3s;
-  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.6s;
+  transition: all ease 0.6s;
   max-width: 1100px;
+  width: 100%;
 }
 
-.portfolio-gallary__img {
-  width: 250px;
-  height: 250px;
+.portfolio-gallary__item {
+  -ms-flex-preferred-size: 22%;
+      flex-basis: 22%;
+  height: 200px;
   margin-bottom: 1.5em;
   background-color: red;
   -webkit-transition: all ease 0.4s;
   transition: all ease 0.4s;
-  background: url(../img/servicesBackground.jpg) center no-repeat;
-  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.portfolio-gallary__img:hover {
+.portfolio-gallary__img {
+  max-height: 100%;
+  width: 100%;
+}
+
+.portfolio-gallary__item:hover {
   cursor: pointer;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
@@ -495,9 +524,13 @@ section[name="skills"]::before {
 
 .skills-cards__circle {
   position: relative;
+  margin-bottom: 1em;
 }
 
 .skills-cards span {
+  color: #2c3e50;
+  font-size: 1.2em;
+  line-height: 1.2em;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -508,7 +541,113 @@ section[name="skills"]::before {
 .skills-cards canvas {
   height: 150px;
   width: 150px;
-  margin-bottom: 1em;
+}
+
+.experience {
+  padding-left: 0;
+  padding-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(50%, #f4f5f6), to(#ffffff));
+  background: linear-gradient(to bottom, #ffffff 0%, #f4f5f6 50%, #ffffff 100%);
+}
+
+.experience-cards {
+  position: relative;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-top: 2em;
+}
+
+.experience-cards::before {
+  position: absolute;
+  content: "";
+  background: grey;
+  width: 1px;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.experience-cards__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5em;
+  min-height: 160px;
+}
+
+.experience-cards__item:nth-child(odd) {
+  text-align: right;
+}
+
+.experience-cards__item:nth-child(even) {
+  text-align: left;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.experience-cards__title {
+  color: #E87E04;
+}
+
+.experience-cards__text {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+.experience-cards__text * {
+  margin-bottom: 0.5em;
+}
+
+.experience-cards__circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.experience-cards span {
+  text-transform: uppercase;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.experience-cards canvas {
+  height: 150px;
+  width: 150px;
 }
 
 @media screen and (min-width: 1441px) {
@@ -528,11 +667,12 @@ section[name="skills"]::before {
         flex-basis: 45%;
   }
   .portfolio-gallary {
-    max-width: 650px;
+    max-width: 720px;
   }
-  .portfolio-gallary__img {
-    height: 300px;
-    width: 300px;
+  .portfolio-gallary__item {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    height: 250px;
   }
 }
 
@@ -618,11 +758,15 @@ section[name="skills"]::before {
     padding: 20px 5%;
   }
   .portfolio-gallary {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     max-width: 425px;
   }
-  .portfolio-gallary__img {
-    height: 190px;
-    width: 190px;
+  .portfolio-gallary__item {
+    height: 220px;
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
   }
   .skills-cards {
     min-width: 425px;
@@ -641,17 +785,10 @@ section[name="skills"]::before {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
-  .portfolio {
-    text-align: justify;
-  }
-  .portfolio-gallary {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .portfolio-gallary__img {
-    width: 300px;
-    height: 300px;
+  .portfolio-gallary__item {
+    width: 320px;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
   }
   .skills-cards {
     min-width: 320px;

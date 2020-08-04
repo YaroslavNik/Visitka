@@ -36,6 +36,8 @@ h2:after
     background-color: $headers
     margin: auto
     transform: translateY(0.5em)
+h4
+    color: $darkBlue
 
 .btn
     padding: 15px
@@ -120,6 +122,9 @@ h2:after
                   margin-right: 1.5em
             &__link
                 color: $white
+            &__link:hover
+                cursor: pointer
+                color: $headers
         &__dropdown
             display: none
             height: 26px
@@ -218,7 +223,8 @@ section[name="services"]
         margin-bottom: 1.2em
     &>:not(:last-child):not(:first-child)
         margin-bottom: 2em
-        
+    &-description
+        text-align: center
     &-filter
         display: flex
         justify-content: space-between
@@ -226,22 +232,29 @@ section[name="services"]
         width: 100%
         max-width: 500px
         min-width: 300px
+        li:nth-child(odd):hover          
+            cursor: pointer
+            color: $headers  
     &-gallary
         display: flex
         justify-content: space-between
         flex-wrap: wrap
         align-items: center
-        transition: all ease 0.3s
+        transition: all ease 0.6s
         max-width: 1100px
-        &__img
-            width: 250px
-            height: 250px
+        width: 100%
+        &__item
+            flex-basis: 22%
+            height: 200px
             margin-bottom: 1.5em
             background-color: red
             transition: all ease 0.4s
-            background: url(../img/servicesBackground.jpg) center no-repeat
-            background-size: cover
-        &__img:hover
+            display: flex
+            align-items: center
+        &__img
+            max-height: 100%
+            width: 100%
+        &__item:hover
             cursor: pointer
             transform: scale(1.2)
             transition: all ease .5s
@@ -284,7 +297,11 @@ section[name = "skills"]
             color: $headers
         &__circle
             position: relative
+            margin-bottom: 1em
         span
+            color: $darkBlue
+            font-size: 1.2em
+            line-height: 1.2em
             position: absolute
             top: 50%
             left: 50%
@@ -292,7 +309,67 @@ section[name = "skills"]
         canvas
             height: 150px
             width: 150px
-            margin-bottom: 1em
+
+.experience
+    padding-left: 0
+    padding-right: 0
+    display: flex
+    flex-flow: column
+    align-items: center
+    background: linear-gradient(to bottom, #ffffff 0%, #f4f5f6 50%, #ffffff 100%)
+    &-cards
+        position: relative
+        width: 80%
+        display: flex
+        flex-flow: column
+        margin-top: 2em
+        &::before
+            position: absolute
+            content: ""
+            background: grey
+            width: 1px
+            height: 70%
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+        &__item
+            position: relative
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            margin-bottom: 5em
+            min-height: 160px 
+        &__item:nth-child(odd)
+            text-align: right
+        &__item:nth-child(even)
+            text-align: left
+            justify-content: flex-end
+        &__title
+            color: $headers
+        &__text
+            flex-basis: 40%
+            *
+                margin-bottom: 0.5em
+        &__circle
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+        span
+            text-transform: uppercase
+            text-align: center
+            color: $darkBlue
+            font-size: 1.2em
+            line-height: 1.2em
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+        canvas
+            height: 150px
+            width: 150px
+
+
 @media screen and( min-width: 1441px)
     .container
         padding-left: 100px
@@ -304,10 +381,10 @@ section[name = "skills"]
         &__item
             flex-basis: 45%
     .portfolio-gallary
-        max-width: 650px
-        &__img
-            height: 300px
-            width: 300px
+        max-width: 720px
+        &__item
+            flex-basis: 45%
+            height: 250px
 @media screen and (max-width: 1110px)
     .services
         .cards
@@ -364,26 +441,25 @@ section[name = "skills"]
     .container
         padding: $paddingContainerTablet
     .portfolio-gallary
+        justify-content: center
         max-width: 425px
-        &__img
-            height: 190px
-            width: 190px
+        &__item
+            height: 220px
+            flex-basis: 70%
     .skills-cards
         min-width: 425px
         justify-content: space-evenly
         &__item
             flex-basis: 40%
+
+
 @media screen and (max-width: 425px)
     .services-cards__item
             flex-basis: 100%
-    .portfolio
-        &-gallary
-            justify-content: center
-            &__img
-                width: 300px
-                height: 300px
-        &-description
-        text-align: justify
+    .portfolio-gallary
+        &__item
+            width: 320px
+            flex-basis: auto
     .skills-cards
         min-width: 320px
         justify-content: space-evenly
