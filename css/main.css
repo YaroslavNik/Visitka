@@ -7,7 +7,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1980px;
+  max-width: 1440px;
   padding: 100px 10%;
 }
 
@@ -254,16 +254,30 @@ h2:after {
   text-align: justify;
 }
 
-.services {
-  padding-left: 0;
-  padding-right: 0;
+section[name="services"] {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  height: 100%;
+  background: url(../img/servicesBackground.jpg) center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.services-content {
+section[name="services"]::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #ffffffea;
+}
+
+.services {
+  position: relative;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,24 +292,8 @@ h2:after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.services::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #f7f7f7dc;
-}
-
-.services-wrapper {
-  width: 100%;
-  height: 100%;
-  background: url(../img/servicesBackground.jpg) center no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .services-title {
@@ -309,13 +307,13 @@ h2:after {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 75%;
-  min-width: 1080px;
+  width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  max-width: 1140px;
 }
 
-.services .cards-item {
+.services-cards__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,19 +332,19 @@ h2:after {
       flex-basis: 20%;
 }
 
-.services .cards__img {
+.services-cards__img {
   width: 20%;
   height: auto;
 }
 
-.services .cards__title {
+.services-cards__title {
   color: #E87E04;
   font-size: 1.1em;
   line-height: 20px;
   text-align: center;
 }
 
-.services .cards__description {
+.services-cards__description {
   text-align: center;
 }
 
@@ -364,10 +362,16 @@ h2:after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.portfolio > :not(:last-child) {
-  margin-bottom: 1.5em;
+.portfolio-title {
+  margin-bottom: 1.2em;
+}
+
+.portfolio > :not(:last-child):not(:first-child) {
+  margin-bottom: 2em;
 }
 
 .portfolio-filter {
@@ -389,9 +393,9 @@ h2:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: center;
@@ -399,16 +403,16 @@ h2:after {
           align-items: center;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
+  max-width: 1100px;
 }
 
 .portfolio-gallary__img {
   width: 250px;
   height: 250px;
+  margin-bottom: 1.5em;
   background-color: red;
   -webkit-transition: all ease 0.4s;
   transition: all ease 0.4s;
-  margin-bottom: 1em;
-  margin-right: 1em;
   background: url(../img/servicesBackground.jpg) center no-repeat;
   background-size: cover;
 }
@@ -419,6 +423,117 @@ h2:after {
           transform: scale(1.2);
   -webkit-transition: all ease .5s;
   transition: all ease .5s;
+}
+
+section[name="skills"] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(../img/servicesBackground.jpg) center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+section[name="skills"]::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #ffffffea;
+}
+
+.skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-cards {
+  margin-top: 2em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 760px;
+}
+
+.skills-cards__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 32%;
+      flex-basis: 32%;
+  margin-bottom: 2.5em;
+}
+
+.skills-cards__description {
+  color: #E87E04;
+}
+
+.skills-cards__circle {
+  position: relative;
+}
+
+.skills-cards span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.skills-cards canvas {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 1441px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .services-cards {
+    width: 100%;
+    max-width: auto;
+  }
+  .services-cards__item {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+  }
+  .portfolio-gallary {
+    max-width: 650px;
+  }
+  .portfolio-gallary__img {
+    height: 300px;
+    width: 300px;
+  }
 }
 
 @media screen and (max-width: 1110px) {
@@ -502,24 +617,51 @@ h2:after {
   .container {
     padding: 20px 5%;
   }
+  .portfolio-gallary {
+    max-width: 425px;
+  }
+  .portfolio-gallary__img {
+    height: 190px;
+    width: 190px;
+  }
+  .skills-cards {
+    min-width: 425px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .skills-cards__item {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
 }
 
 @media screen and (max-width: 425px) {
-  .services .cards {
-    padding: 0;
+  .services-cards__item {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .portfolio {
+    text-align: justify;
+  }
+  .portfolio-gallary {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .services .cards-item {
+  .portfolio-gallary__img {
+    width: 300px;
+    height: 300px;
+  }
+  .skills-cards {
+    min-width: 320px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .skills-cards__item {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-  }
-  .portfolio-gallary__img {
-    margin-right: 0;
-  }
-  .portfolio-description {
-    text-align: justify;
   }
 }
 /*# sourceMappingURL=main.css.map */

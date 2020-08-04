@@ -12,7 +12,7 @@ body
     color: $lightBlue
 .container
     margin: 0 auto
-    max-width: 1980px
+    max-width: 1440px
     padding: $paddingContainer
 h1
     text-align: center
@@ -156,17 +156,14 @@ h2:after
     &-description
         text-align: justify
 
-.services
-    padding-left: 0
-    padding-right: 0
+section[name="services"]
     position: relative
     display: flex
-    &-content
-        z-index: 1
-        display: flex
-        flex-flow: column
-        justify-content: space-between
-        align-items: center
+    width: 100%
+    height: 100%
+    background: url(../img/servicesBackground.jpg) center no-repeat
+    background-size: cover
+    background-attachment: fixed
     &::before
         position: absolute
         top: 0
@@ -174,23 +171,25 @@ h2:after
         content: ""
         width: 100%
         height: 100%
-        background: #f7f7f7dc
-    &-wrapper
-        width: 100%
-        height: 100%
-        background: url(../img/servicesBackground.jpg) center no-repeat
-        background-size: cover
-        background-attachment: fixed
+        background: #ffffffea
+.services
+    position: relative
+    z-index: 1
+    display: flex
+    flex-flow: column
+    justify-content: space-between
+    align-items: center
+    padding-left: 0
+    padding-right: 0
     &-title
         margin-bottom: 2em
     &-cards
         display: flex
         justify-content: space-between
-        width: 75%
-        min-width: 1080px
+        width: 100%
         flex-wrap: wrap
-    .cards
-        &-item
+        max-width: 1140px
+        &__item
             display: flex
             flex-flow: column
             align-items: center
@@ -213,8 +212,12 @@ h2:after
     flex-flow: column
     justify-content: space-between
     align-items: center
-    &>:not(:last-child)
-        margin-bottom: 1.5em
+    padding-left: 0
+    padding-right: 0
+    &-title
+        margin-bottom: 1.2em
+    &>:not(:last-child):not(:first-child)
+        margin-bottom: 2em
         
     &-filter
         display: flex
@@ -225,17 +228,17 @@ h2:after
         min-width: 300px
     &-gallary
         display: flex
-        justify-content: center
+        justify-content: space-between
         flex-wrap: wrap
         align-items: center
         transition: all ease 0.3s
+        max-width: 1100px
         &__img
             width: 250px
             height: 250px
+            margin-bottom: 1.5em
             background-color: red
             transition: all ease 0.4s
-            margin-bottom: 1em
-            margin-right: 1em
             background: url(../img/servicesBackground.jpg) center no-repeat
             background-size: cover
         &__img:hover
@@ -243,7 +246,68 @@ h2:after
             transform: scale(1.2)
             transition: all ease .5s
 
-
+section[name = "skills"]
+    position: relative
+    width: 100%
+    height: 100%
+    background: url(../img/servicesBackground.jpg) center no-repeat
+    background-size: cover
+    background-attachment: fixed
+    &::before
+        position: absolute
+        top: 0
+        left: 0
+        content: ""
+        width: 100%
+        height: 100%
+        background: #ffffffea
+.skills
+    display: flex
+    flex-flow: column
+    align-items: center
+    position: relative
+    z-index: 1
+    &-cards
+        margin-top: 2em
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        min-width: 760px
+        &__item
+            display: flex
+            flex-flow: column
+            align-items: center
+            flex-basis: 32%
+            margin-bottom: 2.5em
+        &__description
+            color: $headers
+        &__circle
+            position: relative
+        span
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+        canvas
+            height: 150px
+            width: 150px
+            margin-bottom: 1em
+@media screen and( min-width: 1441px)
+    .container
+        padding-left: 100px
+        padding-right: 100px
+@media screen and (max-width: 1150px)
+    .services-cards
+        width: 100%
+        max-width: auto
+        &__item
+            flex-basis: 45%
+    .portfolio-gallary
+        max-width: 650px
+        &__img
+            height: 300px
+            width: 300px
 @media screen and (max-width: 1110px)
     .services
         .cards
@@ -290,7 +354,7 @@ h2:after
         &__dropdown
             display: flex
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 768px) // Tablet
     .header
         &-top
             &_wrapper
@@ -299,14 +363,29 @@ h2:after
                 background: linear-gradient(90deg, rgba(150,150,150,0.7) 100%, rgba(157,157,157,0.7) 76%, rgba(2,0,36,0.7) 100%)
     .container
         padding: $paddingContainerTablet
+    .portfolio-gallary
+        max-width: 425px
+        &__img
+            height: 190px
+            width: 190px
+    .skills-cards
+        min-width: 425px
+        justify-content: space-evenly
+        &__item
+            flex-basis: 40%
 @media screen and (max-width: 425px)
-    .services
-        .cards
-            padding: 0
+    .services-cards__item
+            flex-basis: 100%
+    .portfolio
+        &-gallary
             justify-content: center
-            &-item
-                flex-basis: 100%
-    .portfolio-gallary__img
-        margin-right: 0
-    .portfolio-description
+            &__img
+                width: 300px
+                height: 300px
+        &-description
         text-align: justify
+    .skills-cards
+        min-width: 320px
+        justify-content: space-evenly
+        &__item
+            flex-basis: 100%
