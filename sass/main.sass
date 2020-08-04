@@ -319,7 +319,7 @@ section[name = "skills"]
     background: linear-gradient(to bottom, #ffffff 0%, #f4f5f6 50%, #ffffff 100%)
     &-cards
         position: relative
-        width: 80%
+        width: 100%
         display: flex
         flex-flow: column
         margin-top: 2em
@@ -451,6 +451,24 @@ section[name = "skills"]
         justify-content: space-evenly
         &__item
             flex-basis: 40%
+    .experience-cards
+        &::before
+            top: 10px
+            left: 75px
+            transform: none
+            transform: translateX(-1px)
+        &__item
+            justify-content: flex-end!important
+        &__text
+            margin-left: 170px
+            flex-basis: 70%
+            text-align: justify
+        &__circle
+            left: 0
+            top: 50%
+            transform: none
+            transform: translateY(-50%)
+
 
 
 @media screen and (max-width: 425px)

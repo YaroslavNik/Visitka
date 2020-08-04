@@ -562,7 +562,7 @@ section[name="skills"]::before {
 
 .experience-cards {
   position: relative;
-  width: 80%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -777,6 +777,33 @@ section[name="skills"]::before {
   .skills-cards__item {
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%;
+  }
+  .experience-cards::before {
+    top: 10px;
+    left: 75px;
+    -webkit-transform: none;
+            transform: none;
+    -webkit-transform: translateX(-1px);
+            transform: translateX(-1px);
+  }
+  .experience-cards__item {
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+  }
+  .experience-cards__text {
+    margin-left: 170px;
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+    text-align: justify;
+  }
+  .experience-cards__circle {
+    left: 0;
+    top: 50%;
+    -webkit-transform: none;
+            transform: none;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
