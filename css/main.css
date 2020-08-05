@@ -653,6 +653,7 @@ section[name="contact"] {
   position: relative;
   background: url(../img/servicesBackground.jpg) center no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   height: 100%;
   width: 100%;
 }
@@ -662,8 +663,8 @@ section[name="contact"]::before {
   content: "";
   left: 0;
   top: 0;
-  background: -webkit-gradient(linear, left top, right top, from(#fffbfb), color-stop(0%, #9d9d9d), color-stop(0%, rgba(9, 26, 56, 0.738533)));
-  background: linear-gradient(90deg, #fffbfb 0%, #9d9d9d 0%, rgba(9, 26, 56, 0.738533) 0%);
+  background: -webkit-gradient(linear, left top, right top, from(#fffbfb), color-stop(0%, #9d9d9d), color-stop(0%, rgba(9, 30, 56, 0.774947)));
+  background: linear-gradient(90deg, #fffbfb 0%, #9d9d9d 0%, rgba(9, 30, 56, 0.774947) 0%);
   height: 100%;
   width: 100%;
 }
@@ -702,14 +703,39 @@ section[name="contact"]::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
   text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact .info-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 70px;
+  width: 200px;
+}
+
+.contact .info-block__icon {
+  width: 30px;
+  height: 30px;
 }
 
 .contact-form {
@@ -893,6 +919,9 @@ section[name="contact"]::before {
 }
 
 @media screen and (max-width: 768px) {
+  .header-top > * {
+    margin-bottom: 0.5em;
+  }
   .header-top_wrapper {
     height: 350px;
   }

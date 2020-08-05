@@ -375,6 +375,7 @@ section[name = "contact"]
     position: relative
     background: url(../img/servicesBackground.jpg) center no-repeat
     background-attachment: fixed
+    background-size: cover
     height: 100%
     width: 100%
     &::before
@@ -382,7 +383,7 @@ section[name = "contact"]
         content: ""
         left: 0
         top: 0
-        background: linear-gradient(90deg, rgba(255,251,251,1) 0%, rgba(157,157,157,1) 0%, rgba(9,26,56,0.738532913165266) 0%)
+        background: linear-gradient(90deg, rgba(255,251,251,1) 0%, rgba(157,157,157,1) 0%, rgba(9,30,56,0.7749474789915967) 0%)
         height: 100%
         width: 100%
 .contact
@@ -402,10 +403,21 @@ section[name = "contact"]
     &-info
         position: relative
         display: flex
-        justify-content: space-between
+        justify-content: center
         align-items: center
         width: 100%
         text-align: center
+        flex-wrap: wrap
+    .info-block
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: space-between
+        height: 70px
+        width: 200px
+        &__icon
+            width: 30px
+            height: 30px
     &-form
         display: flex
         flex-flow: column
@@ -517,6 +529,8 @@ section[name = "contact"]
 @media screen and (max-width: 768px) // Tablet
     .header
         &-top
+            > * 
+                margin-bottom: 0.5em
             &_wrapper
                 height: 350px
             &_wrapper::before
