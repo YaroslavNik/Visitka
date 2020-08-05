@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const headerDropdown = document.querySelector('.header-bottom__dropdown'),
-        headerMenu = document.querySelector('.header-bottom__navigation')
+        headerMenu = document.querySelector('.header-bottom__navigation'),
+        modalWindow = document.querySelector('.modal'),
+        modalImage = document.querySelector('.modal__img'),
+        modalClose = document.querySelector('.modal__close');
 
     headerDropdown.addEventListener('click', () => {
         headerMenu.classList.toggle('open');
@@ -9,8 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     let skillsCircles = Array.from(document.querySelectorAll('.skills-cards__circle')),
-        expirienceCircles = Array.from(document.querySelectorAll('.experience-cards__circle'));
+        expirienceCircles = Array.from(document.querySelectorAll('.experience-cards__circle')),
+        gallaryImages = Array.from(document.querySelectorAll('.portfolio-gallary__img'));
 
+
+    gallaryImages.forEach(el => el.addEventListener('click', () => {
+        modalWindow.style.display = "flex";
+        modalImage.src = el.src;
+    }));
+
+    modalClose.addEventListener('click', () => {
+        modalWindow.style.display = "none";
+    });
 
     function radians(percent) {
         return 360 * percent / 100 * Math.PI / 180;

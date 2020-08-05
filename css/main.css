@@ -454,6 +454,43 @@ section[name="services"]::before {
   transition: all ease .5s;
 }
 
+.portfolio .modal {
+  display: none;
+  position: fixed;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.portfolio .modal-content {
+  position: relative;
+  margin: auto;
+}
+
+.portfolio .modal__close {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+}
+
+.portfolio .modal__img {
+  position: relative;
+  margin: auto;
+  max-width: 700px;
+  height: auto;
+}
+
 section[name="skills"] {
   position: relative;
   width: 100%;
