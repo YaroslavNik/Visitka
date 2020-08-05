@@ -556,8 +556,7 @@ section[name="skills"]::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(50%, #f4f5f6), to(#ffffff));
-  background: linear-gradient(to bottom, #ffffff 0%, #f4f5f6 50%, #ffffff 100%);
+  max-width: 1152px;
 }
 
 .experience-cards {
@@ -648,6 +647,153 @@ section[name="skills"]::before {
 .experience-cards canvas {
   height: 150px;
   width: 150px;
+}
+
+section[name="contact"] {
+  position: relative;
+  background: url(../img/servicesBackground.jpg) center no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+section[name="contact"]::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#fffbfb), color-stop(0%, #9d9d9d), color-stop(0%, rgba(9, 26, 56, 0.738533)));
+  background: linear-gradient(90deg, #fffbfb 0%, #9d9d9d 0%, rgba(9, 26, 56, 0.738533) 0%);
+  height: 100%;
+  width: 100%;
+}
+
+.contact {
+  max-width: 950px;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-hr {
+  display: none;
+}
+
+.contact > * {
+  color: white;
+  margin-bottom: 2em;
+}
+
+.contact-description {
+  text-align: center;
+}
+
+.contact-info {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.contact-form > * {
+  margin-bottom: 1em;
+}
+
+.contact .form-title {
+  text-transform: uppercase;
+}
+
+.contact .form-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact .form-field {
+  height: 35px;
+  border-radius: 5px;
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+  padding: 10px;
+  opacity: 0.8;
+}
+
+.contact .form-field::-webkit-input-placeholder {
+  padding: 10px;
+}
+
+.contact .form-field:-ms-input-placeholder {
+  padding: 10px;
+}
+
+.contact .form-field::-ms-input-placeholder {
+  padding: 10px;
+}
+
+.contact .form-field::placeholder {
+  padding: 10px;
+}
+
+.contact .form-field_textarea {
+  padding: 10px;
+  opacity: 0.8;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.contact .form-btn {
+  margin-top: 1em;
+  color: white;
+  padding: 15px 25px;
+  background: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: normal;
+}
+
+.contact .form-btn:hover {
+  cursor: pointer;
+  color: #E87E04;
+  border-color: #E87E04;
 }
 
 @media screen and (min-width: 1441px) {
@@ -804,6 +950,24 @@ section[name="skills"]::before {
             transform: none;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
+  }
+  .contact-hr {
+    display: block;
+    width: 100%;
+    height: 1px;
+    color: white;
+  }
+  .contact .info-block {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-bottom: 1.2em;
+  }
+  .contact .form-field {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .contact .form-field:first-child {
+    margin-bottom: 1em;
   }
 }
 

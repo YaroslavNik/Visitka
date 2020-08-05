@@ -34,17 +34,20 @@ li {
     list-style-type: none;
 }
 
-input {
+input,
+textarea {
     border: none;
 }
 
-input:focus::placeholder {
+input:focus::placeholder,
+textarea:focus::placeholder {
     color: transparent;
 }
 
 input:focus,
 button:focus,
 button:active,
-select:focus {
+select:focus,
+textarea:focus {
     outline: none;
 }
