@@ -411,31 +411,34 @@ section[name="services"]::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all ease 0.6s;
-  transition: all ease 0.6s;
   max-width: 1100px;
   width: 100%;
 }
 
 .portfolio-gallary__item {
-  -ms-flex-preferred-size: 22%;
-      flex-basis: 22%;
-  height: 200px;
-  margin-bottom: 1.5em;
-  background-color: red;
-  -webkit-transition: all ease 0.4s;
-  transition: all ease 0.4s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition-property: height, -webkit-flex-basis;
+  transition-property: height, -webkit-flex-basis;
+  transition-property: height, flex-basis;
+  transition-property: height, flex-basis, -webkit-flex-basis, -ms-flex-preferred-size;
+  -webkit-transition-duration: .6s;
+          transition-duration: .6s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  height: 0;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  background-color: red;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -452,6 +455,14 @@ section[name="services"]::before {
           transform: scale(1.2);
   -webkit-transition: all ease .5s;
   transition: all ease .5s;
+}
+
+.portfolio-gallary .active {
+  height: 200px;
+  -ms-flex-preferred-size: 22%;
+      flex-basis: 22%;
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .portfolio .modal {
@@ -482,6 +493,10 @@ section[name="services"]::before {
           transform: translateY(-50%);
   font-size: 40px;
   color: white;
+}
+
+.portfolio .modal__close:hover {
+  cursor: pointer;
 }
 
 .portfolio .modal__img {

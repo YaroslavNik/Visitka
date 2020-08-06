@@ -4,17 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
         headerMenu = document.querySelector('.header-bottom__navigation'),
         modalWindow = document.querySelector('.modal'),
         modalImage = document.querySelector('.modal__img'),
-        modalClose = document.querySelector('.modal__close');
+        modalClose = document.querySelector('.modal__close'),
+        filterItems = document.querySelectorAll('.potfolio-filter__item'),
+        gallaryItems = document.querySelectorAll('.portfolio-gallary__item');
+
+    let skillsCircles = document.querySelectorAll('.skills-cards__circle'),
+        expirienceCircles = document.querySelectorAll('.experience-cards__circle'),
+        gallaryImages = document.querySelectorAll('.portfolio-gallary__img');
+
+
+    // HEADER-DROPDOWN------------------------------------------------------------------------
 
     headerDropdown.addEventListener('click', () => {
         headerMenu.classList.toggle('open');
     });
 
-
-    let skillsCircles = Array.from(document.querySelectorAll('.skills-cards__circle')),
-        expirienceCircles = Array.from(document.querySelectorAll('.experience-cards__circle')),
-        gallaryImages = Array.from(document.querySelectorAll('.portfolio-gallary__img'));
-
+    // GALARY MODAL-IMAGES------------------------------------------------------------------------
 
     gallaryImages.forEach(el => el.addEventListener('click', () => {
         modalWindow.style.display = "flex";
@@ -24,6 +29,35 @@ document.addEventListener('DOMContentLoaded', () => {
     modalClose.addEventListener('click', () => {
         modalWindow.style.display = "none";
     });
+
+
+
+    // GALLARY-FILTER------------------------------------------------------------------------
+
+    function cutClassName(el) {
+        let classNameFull = el.className;
+        return classNameFull.substring(classNameFull.indexOf(' ') + 1, classNameFull.length);
+    }
+
+    let f = false;
+    filterItems.forEach(el => el.addEventListener('click', () => {
+        if (cutClassName(el) == "filter_all") {
+            gallaryItems.forEach(elem => {
+                elem.classList.add('active');
+            });
+            f = true;
+        } else {
+            gallaryItems.forEach(elem => {
+                if (elem.classList.contains(cutClassName(el))) {
+                    elem.classList.add('active');
+                } else {
+                    elem.classList.remove('active');
+                }
+            });
+            f = false;
+        }
+    }));
+    // CANVAS
 
     function radians(percent) {
         return 360 * percent / 100 * Math.PI / 180;
