@@ -475,6 +475,8 @@ section[name = "contact"]
             padding: 10px
             opacity: 0.8
             &::placeholder
+                font-size: 1em
+                line-height: 1em
                 padding: 10px
             &_textarea
                 padding: 10px
@@ -612,15 +614,27 @@ section[name = "contact"]
             margin-bottom: 1em
 
 
-
+@media screen and (max-width: 580px)
+    .portfolio-gallary
+        &__img
+            width: 100%
+            height: auto
+        .active
+            width: 100%
+            height: auto
+            width: auto
+            flex-basis: auto
+            margin: 0
+            margin-bottom: 1em
 
 @media screen and (max-width: 425px)
     .services-cards__item
             flex-basis: 100%
     .portfolio-gallary
-        &__item
-            width: 320px
-            flex-basis: auto
+        &__img
+            width: 100%
+            height: auto
+        .active
     .skills-cards
         min-width: 320px
         justify-content: space-evenly

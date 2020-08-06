@@ -21,16 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // GALARY MODAL-IMAGES------------------------------------------------------------------------
 
-    gallaryImages.forEach(el => el.addEventListener('click', () => {
-        modalWindow.style.display = "flex";
-        modalImage.src = el.src;
-    }));
+    if (document.body.clientWidth > 768) {
+        gallaryImages.forEach(el => el.addEventListener('click', () => {
+            modalWindow.style.display = "flex";
+            modalImage.src = el.src;
+        }));
 
-    modalClose.addEventListener('click', () => {
-        modalWindow.style.display = "none";
-    });
-
-
+        modalClose.addEventListener('click', () => {
+            modalWindow.style.display = "none";
+        });
+    }
 
     // GALLARY-FILTER------------------------------------------------------------------------
 

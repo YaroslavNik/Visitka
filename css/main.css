@@ -836,18 +836,26 @@ section[name="contact"]::before {
 }
 
 .contact .form-field::-webkit-input-placeholder {
+  font-size: 1em;
+  line-height: 1em;
   padding: 10px;
 }
 
 .contact .form-field:-ms-input-placeholder {
+  font-size: 1em;
+  line-height: 1em;
   padding: 10px;
 }
 
 .contact .form-field::-ms-input-placeholder {
+  font-size: 1em;
+  line-height: 1em;
   padding: 10px;
 }
 
 .contact .form-field::placeholder {
+  font-size: 1em;
+  line-height: 1em;
   padding: 10px;
 }
 
@@ -1048,15 +1056,30 @@ section[name="contact"]::before {
   }
 }
 
+@media screen and (max-width: 580px) {
+  .portfolio-gallary__img {
+    width: 100%;
+    height: auto;
+  }
+  .portfolio-gallary .active {
+    width: 100%;
+    height: auto;
+    width: auto;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    margin: 0;
+    margin-bottom: 1em;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .services-cards__item {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
-  .portfolio-gallary__item {
-    width: 320px;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
+  .portfolio-gallary__img {
+    width: 100%;
+    height: auto;
   }
   .skills-cards {
     min-width: 320px;
