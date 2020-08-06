@@ -408,6 +408,7 @@ section[name="services"]::before {
 }
 
 .portfolio-gallary {
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -419,7 +420,7 @@ section[name="services"]::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 1100px;
+  max-width: 1240px;
   width: 100%;
 }
 
@@ -461,7 +462,8 @@ section[name="services"]::before {
   height: 200px;
   -ms-flex-preferred-size: 22%;
       flex-basis: 22%;
-  margin-right: 1.5em;
+  margin-right: 0.75em;
+  margin-left: 0.75em;
   margin-bottom: 1.5em;
 }
 
@@ -890,14 +892,6 @@ section[name="contact"]::before {
     -ms-flex-preferred-size: 45%;
         flex-basis: 45%;
   }
-  .portfolio-gallary {
-    max-width: 720px;
-  }
-  .portfolio-gallary__item {
-    -ms-flex-preferred-size: 45%;
-        flex-basis: 45%;
-    height: 250px;
-  }
 }
 
 @media screen and (max-width: 1110px) {
@@ -968,6 +962,9 @@ section[name="contact"]::before {
     display: -ms-flexbox;
     display: flex;
   }
+  .portfolio-gallary .active {
+    height: 165px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -988,12 +985,11 @@ section[name="contact"]::before {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    max-width: 425px;
   }
-  .portfolio-gallary__item {
-    height: 220px;
-    -ms-flex-preferred-size: 70%;
-        flex-basis: 70%;
+  .portfolio-gallary .active {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    width: 240px;
   }
   .skills-cards {
     min-width: 425px;
@@ -1071,6 +1067,12 @@ section[name="contact"]::before {
   .skills-cards__item {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+  }
+  body * {
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transition-timing-function: none;
+            transition-timing-function: none;
   }
 }
 /*# sourceMappingURL=main.css.map */
