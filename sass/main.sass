@@ -199,8 +199,10 @@ section[name="services"]
             flex-flow: column
             align-items: center
             justify-content: space-between
-            min-height: 250px
             flex-basis: 20%
+            margin-bottom: 2em
+            > *
+                margin-bottom: 2em
         &__img
             width: 20%
             height: auto
@@ -459,6 +461,8 @@ section[name = "contact"]
         &__icon
             width: 30px
             height: 30px
+        &__description
+            color: white
     &-form
         display: flex
         flex-flow: column
@@ -512,6 +516,11 @@ section[name = "contact"]
     .container
         padding-left: 100px
         padding-right: 100px
+
+@media screen and (max-width: 1250px)
+    .portfolio-gallary .active
+        height: 270px
+        flex-basis: 40%
 @media screen and (max-width: 1150px)
     .services-cards
         width: 100%
@@ -563,8 +572,6 @@ section[name = "contact"]
             left: 0
         &__dropdown
             display: flex
-    .portfolio-gallary .active
-            height: 165px
 
 @media screen and (max-width: 768px) // Tablet
     .header
@@ -579,9 +586,16 @@ section[name = "contact"]
         padding: $paddingContainerTablet
     .portfolio-gallary
         justify-content: center
+        &__img
+            max-width: 100%
+        &__item:hover
+            transform: none
         .active
-            flex-basis: auto
-            width: 240px
+            margin: 0
+            margin-bottom: 1em
+            flex-basis: 100%
+            height: auto
+            max-height: 300px
     .skills-cards
         min-width: 425px
         justify-content: space-evenly

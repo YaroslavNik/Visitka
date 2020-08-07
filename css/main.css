@@ -336,9 +336,13 @@ section[name="services"]::before {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-height: 250px;
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
+  margin-bottom: 2em;
+}
+
+.services-cards__item > * {
+  margin-bottom: 2em;
 }
 
 .services-cards__img {
@@ -802,6 +806,10 @@ section[name="contact"]::before {
   height: 30px;
 }
 
+.contact .info-block__description {
+  color: white;
+}
+
 .contact-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -901,6 +909,14 @@ section[name="contact"]::before {
   }
 }
 
+@media screen and (max-width: 1250px) {
+  .portfolio-gallary .active {
+    height: 270px;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+}
+
 @media screen and (max-width: 1150px) {
   .services-cards {
     width: 100%;
@@ -980,9 +996,6 @@ section[name="contact"]::before {
     display: -ms-flexbox;
     display: flex;
   }
-  .portfolio-gallary .active {
-    height: 165px;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1004,10 +1017,20 @@ section[name="contact"]::before {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .portfolio-gallary__img {
+    max-width: 100%;
+  }
+  .portfolio-gallary__item:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
   .portfolio-gallary .active {
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-    width: 240px;
+    margin: 0;
+    margin-bottom: 1em;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: auto;
+    max-height: 300px;
   }
   .skills-cards {
     min-width: 425px;
