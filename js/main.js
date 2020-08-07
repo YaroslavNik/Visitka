@@ -41,7 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let f = false;
     filterItems.forEach(el => el.addEventListener('click', () => {
-        if (cutClassName(el) == "filter_all") {
+        el.style.color = "#E87E04";
+        for (let i = 0; i < filterItems.length; i++) {
+            if (filterItems[i] == el) continue;
+            filterItems[i].style.color = "grey";
+        }
+        if (el.classList.contains('filter_all')) {
             gallaryItems.forEach(elem => {
                 elem.classList.add('active');
             });

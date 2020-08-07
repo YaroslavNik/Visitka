@@ -407,14 +407,18 @@ section[name="services"]::before {
   color: #E87E04;
 }
 
+.portfolio-filter li:first-child {
+  color: #E87E04;
+}
+
 .portfolio-gallary {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: center;
@@ -428,26 +432,32 @@ section[name="services"]::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition-property: height, -webkit-flex-basis;
-  transition-property: height, -webkit-flex-basis;
-  transition-property: height, flex-basis;
-  transition-property: height, flex-basis, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: .6s;
-          transition-duration: .6s;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition-property: height, -webkit-flex-basis, -webkit-transform;
+  transition-property: height, -webkit-flex-basis, -webkit-transform;
+  transition-property: height, flex-basis, transform;
+  transition-property: height, flex-basis, transform, -webkit-flex-basis, -ms-flex-preferred-size, -webkit-transform;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   height: 0;
   -ms-flex-preferred-size: 0;
       flex-basis: 0;
-  background-color: red;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
 .portfolio-gallary__img {
   max-height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
 }
 
 .portfolio-gallary__item:hover {
@@ -460,10 +470,10 @@ section[name="services"]::before {
 
 .portfolio-gallary .active {
   height: 200px;
-  -ms-flex-preferred-size: 22%;
-      flex-basis: 22%;
-  margin-right: 0.75em;
-  margin-left: 0.75em;
+  -ms-flex-preferred-size: 22.5%;
+      flex-basis: 22.5%;
+  margin-right: 0.9em;
+  margin-left: 0.9em;
   margin-bottom: 1.5em;
 }
 
